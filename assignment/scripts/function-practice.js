@@ -76,34 +76,47 @@ console.log(getLast([]));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find( value, array ){
-  for ( let i=0; i < array.length; i++ ) {
-    if ( array[i] === value ) {
+  for ( let item of array ) {
+    if ( item === value ) {
       return true;
-    } else if ( array[i] !== value ) {
-      return false;
     }
-  }
-}
+  } return false; /// Definitely need to ask question about this!! Why did it not work when I used an if else statement but did work when my return false statement was outside the scope of the loop?? Or does that have to do with the 'for of' loop?
+} // end find
 
 console.log(find( 7, [1, 3, 5, 7]));
 console.log(find( 2, [2, 4, 3, 8]));
+console.log(find( 3, [9, 6, 3]));
+console.log(find( 4, [1, 2, 3, 5]));
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (letter === string.charAt(0) ) {
+    return true;
+  } else {
+    return false;
+  }
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
+function sumAll( array ) {
+  let sum = 0;
+  let i = 0;
   // TODO: loop to add items
+  while ( i < array.length ) {
+    sum += array[i++];
+  }
   return sum;
-}
+} // end sumALl
+
+console.log( sumAll( [1, 3, 5, 7]));
+console.log( sumAll( [6, 3, 4, 6, 10]));
+console.log( sumAll( [3, 5]));
+
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
