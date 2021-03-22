@@ -82,7 +82,7 @@ function find( value, array ){
     if ( item === value ) {
       return true;
     }
-  } return false; /// Definitely need to ask question about this!! Why did it not work when I used an if else statement but did work when my 'return false' statement was outside the scope of the if statement?? Or does that have to do with the 'for of' loop?
+  } return false; /// ** Why did it not work when I used an if else statement but did work when my 'return false' statement was outside the scope of the if statement?? Or does that have to do with the 'for of' loop?
 } // end find
 
 console.log(find( 7, [1, 3, 5, 7]));
